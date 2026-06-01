@@ -17,6 +17,8 @@ services:
   grafana:
     image: grafana/grafana:13.0.1-security-01
     container_name: healthcare-grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
     env_file:
       - .env
     ports:
@@ -29,6 +31,8 @@ services:
 
 volumes:
   prometheus_data:
+    driver: local
+  grafana_data:
     driver: local
 
 networks:
