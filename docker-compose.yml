@@ -14,6 +14,16 @@ services:
       - healthcare-network
     restart: unless-stopped
 
+  node-exporter:
+    image: prom/node-exporter
+    container_name: healthcare-node-exporter
+    pid: host
+    ports:
+      - "9100:9100"
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+
   grafana:
     image: grafana/grafana:13.0.1-security-01
     container_name: healthcare-grafana
