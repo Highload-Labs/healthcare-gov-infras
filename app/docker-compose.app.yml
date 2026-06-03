@@ -1,6 +1,8 @@
 services:
   backend:
     image: mmizu/healthcare-backend
+    ports:
+      - "8080:${SERVER_PORT}"
     env_file:
       - ../env/app.env
     networks:
