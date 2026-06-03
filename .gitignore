@@ -1,3 +1,4 @@
 .env
 env/db.env
 env/monitoring.env
+env/app.env
