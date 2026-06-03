@@ -29,6 +29,8 @@ services:
     container_name: healthcare-grafana
     volumes:
       - grafana_data:/var/lib/grafana
+      - ./monitoring/dashboards/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yml
+      - ./monitoring/dashboards/storage:/etc/grafana/dashboards
     env_file:
       - .env
     ports:
