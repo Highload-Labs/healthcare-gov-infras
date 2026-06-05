@@ -3,9 +3,15 @@ scrape_configs:
     scrape_interval: 10s
     static_configs:
       - targets:
-          - backend:8080
+          - backend-1.healthcare.internal:8080
+          - backend-2.healthcare.internal:8080
+          - backend-3.healthcare.internal:8080
   - job_name: node
     scrape_interval: 10s
     static_configs:
       - targets:
-          - node-exporter:9100
+          - monitoring.healthcare.internal:9100
+          - backend-1.healthcare.internal:9100
+          - backend-2.healthcare.internal:9100
+          - backend-3.healthcare.internal:9100
+          - postgres.healthcare.internal:9100
